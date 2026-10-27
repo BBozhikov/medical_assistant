@@ -1,0 +1,8 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+models/
+data/
+vector_db/
