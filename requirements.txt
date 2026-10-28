@@ -1,2 +1,5 @@
 PyQt5>=5.15.10,<6
 chromadb>=1.5.9,<2
+# Local LLM runtime. On Apple Silicon install it FIRST with Metal (GPU):
+#   CMAKE_ARGS="-DGGML_METAL=on" pip install --no-cache-dir llama-cpp-python==0.3.36
+# !!! Make sure you are inside the .venv when installing all packages
