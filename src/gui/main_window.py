@@ -25,7 +25,7 @@ from PyQt5.QtWidgets import (
 from src.gui.chat_widget import ChatWidget, MessageInput
 from src.gui.settings_dialog import SettingsDialog
 from src.gui.sidebar_widget import SidebarWidget
-from src.gui.worker_threads import GenerationWorker
+from src.gui.worker_thread import GenerationWorker
 from src.rag.rag_pipeline import (
     MEDICAL_DISCLAIMER,
     GenerationSettings,
