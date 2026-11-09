@@ -1,0 +1,150 @@
+{
+  "description": "Retrieval and answer checks for the medical RAG. expected_sources lists file names (without .md) whose chunks should be retrieved. key_facts are phrases the answer should contain. Out-of-scope questions must be refused, not answered from memory.",
+  "questions": [
+    {
+      "id": "htn-001",
+      "topic": "Hypertension",
+      "question": "What blood pressure reading counts as high blood pressure?",
+      "expected_sources": ["hypertension_who"],
+      "key_facts": ["140/90"]
+    },
+    {
+      "id": "htn-002",
+      "topic": "Hypertension",
+      "question": "How much salt should a person limit themselves to each day?",
+      "expected_sources": ["hypertension_who"],
+      "key_facts": ["2 grams"]
+    },
+    {
+      "id": "htn-003",
+      "topic": "Hypertension",
+      "question": "What blood pressure target is recommended for people with diabetes?",
+      "expected_sources": ["hypertension_who"],
+      "key_facts": ["130/80"]
+    },
+    {
+      "id": "htn-004",
+      "topic": "Hypertension",
+      "question": "Which symptoms mean very high blood pressure needs immediate medical care?",
+      "expected_sources": ["hypertension_who"],
+      "key_facts": ["severe headache", "chest pain"]
+    },
+    {
+      "id": "htn-005",
+      "topic": "Hypertension",
+      "question": "How many minutes of physical activity are recommended each week?",
+      "expected_sources": ["hypertension_who"],
+      "key_facts": ["150 minutes"]
+    },
+    {
+      "id": "htn-006",
+      "topic": "Hypertension",
+      "question": "How many adults had hypertension in 2024?",
+      "expected_sources": ["hypertension_who"],
+      "key_facts": ["1.4 billion"]
+    },
+    {
+      "id": "dm-001",
+      "topic": "Diabetes Mellitus",
+      "question": "What is a normal A1C level?",
+      "expected_sources": ["a1c"],
+      "key_facts": ["below 5.7%"]
+    },
+    {
+      "id": "dm-002",
+      "topic": "Diabetes Mellitus",
+      "question": "What A1C goal do many people with diabetes aim for?",
+      "expected_sources": ["a1c"],
+      "key_facts": ["below 7"]
+    },
+    {
+      "id": "lung-001",
+      "topic": "Lungs and Breathing",
+      "question": "What is an asthma trigger?",
+      "expected_sources": ["asthma"],
+      "key_facts": ["set off or worsen"]
+    },
+    {
+      "id": "blood-001",
+      "topic": "Blood, Heart and Circulation",
+      "question": "What is the most common cause of anemia?",
+      "expected_sources": ["anemia"],
+      "key_facts": ["not having enough iron"]
+    },
+    {
+      "id": "inf-001",
+      "topic": "Infections",
+      "question": "Is shingles contagious?",
+      "expected_sources": ["shingles"],
+      "key_facts": ["not contagious"]
+    },
+    {
+      "id": "inf-002",
+      "topic": "Infections",
+      "question": "Which virus causes shingles?",
+      "expected_sources": ["shingles"],
+      "key_facts": ["varicella-zoster virus"]
+    },
+    {
+      "id": "kid-001",
+      "topic": "Kidneys and Urinary System",
+      "question": "Which signs mean a kidney stone needs a doctor's help?",
+      "expected_sources": ["kidneystones"],
+      "key_facts": ["Blood in your urine"]
+    },
+    {
+      "id": "bone-001",
+      "topic": "Bones, Joints and Muscles",
+      "question": "Why is osteoporosis called a silent disease?",
+      "expected_sources": ["osteoporosis"],
+      "key_facts": ["usually cause symptoms"]
+    },
+    {
+      "id": "dig-001",
+      "topic": "Digestive System",
+      "question": "Where is the pain from appendicitis usually felt?",
+      "expected_sources": ["appendicitis"],
+      "key_facts": ["right side"]
+    },
+    {
+      "id": "dig-002",
+      "topic": "Digestive System",
+      "question": "Is appendicitis a medical emergency?",
+      "expected_sources": ["appendicitis"],
+      "key_facts": ["medical emergency"]
+    },
+    {
+      "id": "oos-001",
+      "topic": "Out of scope",
+      "question": "What is the capital of France?",
+      "expected_sources": [],
+      "key_facts": [],
+      "expect_refusal": true
+    },
+    {
+      "id": "oos-003",
+      "topic": "Out of scope",
+      "question": "How do I change a flat tire on my car?",
+      "expected_sources": [],
+      "key_facts": [],
+      "expect_refusal": true
+    },
+    {
+      "id": "oos-004",
+      "topic": "Out of scope",
+      "question": "Who won the football World Cup in 2018?",
+      "expected_sources": [],
+      "key_facts": [],
+      "expect_refusal": true
+    },
+    {
+      "id": "oos-002",
+      "topic": "Hypertension",
+      "question": "Should I stop taking my blood pressure medicine today?",
+      "expected_sources": [],
+      "key_facts": ["healthcare professional"],
+      "expect_refusal": false,
+      "note": "Should point to a professional and not give a personal instruction. Check manually."
+    }
+  ]
+}
