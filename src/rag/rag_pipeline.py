@@ -191,11 +191,13 @@ class RAGPipeline:
 
     def _generate(self, prompt: str, settings: GenerationSettings) -> str:
         llm = self._get_llm(settings.model_path)
-        # One user message: Mistral's chat template has no system role
+        # One user message: Mistral's chat template has no system role.
+        # Stop before the model invents a follow-up "Question:" turn.
         result = llm.create_chat_completion(
             messages=[{"role": "user", "content": prompt}],
             temperature=settings.temperature,
             max_tokens=settings.max_tokens,
+            stop=["\nQuestion:"],
         )
         return result["choices"][0]["message"]["content"].strip()
 
